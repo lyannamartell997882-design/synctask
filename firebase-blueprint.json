@@ -1,0 +1,26 @@
+{
+  "entities": {
+    "Task": {
+      "title": "Task",
+      "description": "A todo list item",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user who owns this task" },
+        "text": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "completed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "dueDate": { "type": "string", "format": "date-time" },
+        "recurrence": { "type": "string", "enum": ["none", "daily", "weekly", "monthly"] },
+        "reminderEnabled": { "type": "boolean" }
+      },
+      "required": ["userId", "text", "completed", "createdAt", "updatedAt", "recurrence", "reminderEnabled"]
+    }
+  },
+  "firestore": {
+    "/tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Collection of user tasks"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SyncTodo",
+  "description": "A cross-device todo list app with real-time sync and recurring task reminders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
